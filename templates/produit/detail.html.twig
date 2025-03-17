@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProduitController!
+{% endblock %}
+
+{% block body %}
+	<h1>Detail du produit</h1>
+	<div class="container">
+
+
+		<table class="table table-striped ">
+			
+			<tbody>
+				
+
+					<tr>
+						<th scope="row">
+							ID</th>
+						<td>
+							{{ produit.id }}</td>
+						
+					</tr>
+					<tr>
+						<th scope="row">
+							Name</th>
+						<td>
+							{{ produit.name }}</td>
+						
+					</tr>
+					<tr>
+						<th scope="row">
+							Prix</th>
+						<td>
+							{{ produit.price }}</td>
+						
+					</tr>
+					<tr>
+						<th scope="row">
+							Quantite</th>
+						<td>
+							{{ produit.stock }}</td>
+						
+					</tr>
+					<tr>
+						<th scope="row">
+							Categorie</th>
+						<td>
+						 {{ produit.category.name }} </td>
+						
+					</tr>
+					<tr>
+						<th scope="row">
+							Cree le </th>
+						<td>
+						 {{ produit.cteatedAt | date("d/m/Y") }} </td>
+						
+					</tr>
+				
+			</tbody>
+		</table>
+
+	</div>
+
+{% endblock %}

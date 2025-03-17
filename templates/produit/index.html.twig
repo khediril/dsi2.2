@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProduitController!
+{% endblock %}
+
+{% block body %}
+	<h1>Les Produits</h1>
+	<div class="container">
+
+
+		<table class="table table-striped ">
+			<thead>
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Name</th>
+					<th scope="col">Detail</th>
+                    <th scope="col">Supprimer</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				{% for produit in produits %}
+
+					<tr>
+						<th scope="row">
+							{{ produit.id }}</th>
+						<td>
+							{{ produit.name }}</td>
+						<td>
+							<a href="{{ path('app_produit_detail',{'id':produit.id})}}">Details</a></td>
+                            <td>
+							<a href="{{ path('app_produit_delete',{'id':produit.id})}}">Supprimer</a></td>
+                             <td>
+							<a href="{{ path('app_produit_update',{'id':produit.id})}}">Modifier</a></td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+	</div>
+
+{% endblock %}
